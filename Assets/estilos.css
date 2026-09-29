@@ -476,6 +476,66 @@ a{
 .story{
   margin-top:var(--s5);
 }
+/* Línea de tiempo: hitos con icono, línea vertical a la izquierda */
+.timeline{
+  position:relative;
+  margin-top:var(--s5);
+  display:grid;
+  gap:var(--s4);
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:21px;
+  top:8px;
+  bottom:8px;
+  width:2px;
+  background:var(--linea);
+}
+.t-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:var(--s3);
+  align-items:start;
+  transition:transform .25s ease;
+}
+.t-item:hover{
+  transform:translateX(4px);
+}
+.t-dot{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--linea);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--acento);
+  position:relative;
+  z-index:1;
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+.t-item:hover .t-dot{
+  background:var(--acento);
+  border-color:var(--acento);
+  color:#fff;
+}
+.t-date{
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0;
+}
+.t-item h3{
+  margin:var(--s1) 0;
+}
+.t-text{
+  color:var(--muted);
+  margin:0;
+}
 
 /* ---------- 08. GUSTOS ---------- */
 /* Retícula 4+4+4: 3 tarjetas iguales */
@@ -885,7 +945,8 @@ a{
     animation-range:entry 0% cover 25%;
   }
   .card,
-  .meta{
+  .meta,
+  .t-item{
     animation:aparecer .6s ease both;
     animation-timeline:view();
     animation-range:entry 0% cover 25%;
