@@ -522,6 +522,15 @@ a{
   border-color:var(--acento);
   color:#fff;
 }
+/* El mismo círculo en las tarjetas de Gustos (repetición) */
+.card .t-dot{
+  margin-bottom:var(--s3);
+}
+.card:hover .t-dot{
+  background:var(--acento);
+  border-color:var(--acento);
+  color:#fff;
+}
 .t-date{
   font-size:.8rem;
   letter-spacing:.12em;
