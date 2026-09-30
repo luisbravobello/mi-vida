@@ -58,15 +58,22 @@ if (sub && !reduceMovimiento) {
   setTimeout(escribir, 600);
 }
 
-// Botón flotante: aparece al bajar 600px y sube suave arriba
-const arriba = document.getElementById('volverArriba');
-if (arriba) {
-  function verArriba() {
-    arriba.classList.toggle('visible', window.scrollY > 600);
-  }
-  window.addEventListener('scroll', verArriba, { passive: true });
-  verArriba();
-  arriba.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: reduceMovimiento ? 'auto' : 'smooth' });
+// Copiar email al portapapeles con confirmación visible
+const copiar = document.getElementById('copiarEmail');
+const copyMsg = document.getElementById('copyMsg');
+if (copiar && copyMsg) {
+  copiar.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('luisbravobello@gmail.com');
+      copyMsg.textContent = '¡Email copiado!';
+    } catch (err) {
+      copyMsg.textContent = 'No se pudo copiar: luisbravobello@gmail.com';
+    }
   });
+}
+
+// Año automático en el footer
+const anio = document.getElementById('anio');
+if (anio) {
+  anio.textContent = new Date().getFullYear();
 }

@@ -1179,6 +1179,18 @@
       </div>
     </section>
 
+    <!-- Frase: palabras textuales de mi historia -->
+    <section class="section frase-band">
+      <div class="wrap">
+        <p class="frase">
+          No me rendiré hasta graduarme como Ingeniero de Software.
+        </p>
+        <p class="frase-autor">
+          — Luis
+        </p>
+      </div>
+    </section>
+
     <!-- ============ 07. CTA FINAL / CONTACTO ============ -->
     <section
       id="contacto"
@@ -1237,6 +1249,18 @@
               Mi GitHub
             </a>
           </div>
+          <button
+            class="copy-link"
+            id="copiarEmail"
+            type="button"
+          >
+            Copiar mi email
+          </button>
+          <p
+            class="copy-msg"
+            id="copyMsg"
+            aria-live="polite"
+          ></p>
 
         </div>
         <form
@@ -1483,7 +1507,7 @@
       </div>
       <div class="footer-bottom">
         <p>
-          © 2026 Luis Bravo · Hecho en HTML/CSS/JS · Punta Cana, RD
+          © <span id="anio">2026</span> Luis Bravo · Hecho en HTML/CSS/JS · Punta Cana, RD
         </p>
         <p>
           <a href="#hero">
@@ -1493,15 +1517,6 @@
       </div>
     </div>
   </footer>
-
-  <button
-    class="volver-arriba"
-    id="volverArriba"
-    type="button"
-    aria-label="Volver arriba"
-  >
-    ↑
-  </button>
 
   <script
     src="js/app.js"
