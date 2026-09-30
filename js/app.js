@@ -37,3 +37,36 @@ if (form && formMsg) {
     form.reset();
   });
 }
+
+// Máquina de escribir: el subtítulo del hero se escribe solo al cargar
+const sub = document.querySelector('.hero .sub');
+const reduceMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (sub && !reduceMovimiento) {
+  const texto = sub.textContent;
+  sub.textContent = '';
+  sub.classList.add('typing');
+  let i = 0;
+  function escribir() {
+    i++;
+    sub.textContent = texto.slice(0, i);
+    if (i < texto.length) {
+      setTimeout(escribir, 22);
+    } else {
+      setTimeout(() => sub.classList.remove('typing'), 1200);
+    }
+  }
+  setTimeout(escribir, 600);
+}
+
+// Botón flotante: aparece al bajar 600px y sube suave arriba
+const arriba = document.getElementById('volverArriba');
+if (arriba) {
+  function verArriba() {
+    arriba.classList.toggle('visible', window.scrollY > 600);
+  }
+  window.addEventListener('scroll', verArriba, { passive: true });
+  verArriba();
+  arriba.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMovimiento ? 'auto' : 'smooth' });
+  });
+}

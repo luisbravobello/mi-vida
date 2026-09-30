@@ -369,6 +369,50 @@ a{
   color:var(--muted);
   font-size:.9rem;
 }
+/* Cinta de stack: tecnologías sin niveles inventados */
+.stack-band{
+  border-top:1px solid var(--linea);
+  border-bottom:1px solid var(--linea);
+  background:var(--fondo);
+  padding:var(--s3) 0;
+}
+.stack-inner{
+  display:flex;
+  align-items:center;
+  gap:var(--s4);
+  flex-wrap:wrap;
+}
+.stack-label{
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+  margin:0;
+}
+.chips{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:var(--s2);
+  flex-wrap:wrap;
+}
+.chips li{
+  border:1px solid var(--linea);
+  border-radius:999px;
+  padding:6px 14px;
+  font-size:.85rem;
+  font-weight:600;
+  background:#fff;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.chips li:hover{
+  background:var(--texto);
+  color:#fff;
+  border-color:var(--texto);
+  transform:translateY(-2px);
+}
 /* Entrada suave del hero al cargar (escalonada) */
 .hero .badge{
   animation:subir .6s ease both;
@@ -376,14 +420,27 @@ a{
 .hero h1{
   animation:subir .6s .1s ease both;
 }
-.hero .sub{
-  animation:subir .6s .2s ease both;
-}
 .hero .cta-row{
   animation:subir .6s .3s ease both;
 }
 .hero-card{
   animation:aparecer .6s .35s ease both;
+}
+/* Máquina de escribir: el subtítulo se escribe solo (lo enciende el JS) */
+.sub.typing::after{
+  content:"";
+  display:inline-block;
+  width:2px;
+  height:1em;
+  background:var(--acento);
+  margin-left:2px;
+  vertical-align:-2px;
+  animation:parpadeo 1s steps(1) infinite;
+}
+@keyframes parpadeo{
+  50%{
+    opacity:0;
+  }
 }
 @keyframes subir{
   from{
@@ -956,6 +1013,34 @@ a{
 .footer-bottom a:hover{
   text-decoration:underline;
   text-underline-offset:3px;
+}
+/* Botón flotante volver arriba (aparece al bajar) */
+.volver-arriba{
+  position:fixed;
+  right:var(--s3);
+  bottom:var(--s3);
+  z-index:50;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--texto);
+  color:#fff;
+  border:2px solid var(--texto);
+  font-size:1.25rem;
+  line-height:1;
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(12px);
+  pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease, background .2s ease;
+}
+.volver-arriba.visible{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+.volver-arriba:hover{
+  background:#000;
 }
 
 
