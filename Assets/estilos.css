@@ -419,23 +419,11 @@ a{
   border-bottom:1px solid var(--linea);
 }
 .kicker{
-  display:flex;
-  align-items:center;
-  gap:var(--s2);
   font-size:.8rem;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--muted);
   margin-bottom:var(--s2);
-}
-/* Barrita negra antes del kicker: guiña la mirada a la sección */
-.kicker::before{
-  content:"";
-  width:var(--s5);
-  height:2px;
-  background:var(--acento);
-  border-radius:2px;
-  flex-shrink:0;
 }
 .section-sub{
   color:var(--muted);
