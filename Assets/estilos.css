@@ -597,6 +597,12 @@ a{
 .ruta-mapa:hover .pais-forma{
   fill:#e7e2d8;
 }
+/* Divisiones internas: estados y provincias en blanco sobre el gris */
+.pais-div{
+  fill:none;
+  stroke:#fff;
+  stroke-width:1.2;
+}
 .pin{
   stroke-width:2;
 }
@@ -631,7 +637,16 @@ a{
   margin-top:var(--s4);
 }
 .ruta-lados h3{
+  display:flex;
+  align-items:center;
+  gap:var(--s2);
   margin:var(--s1) 0;
+}
+/* Banderas simplificadas (sin escudos, muy pequeñas) */
+.bandera{
+  border-radius:4px;
+  box-shadow:0 0 0 1px var(--linea);
+  flex-shrink:0;
 }
 @keyframes marcha{
   to{
