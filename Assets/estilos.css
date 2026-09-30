@@ -846,18 +846,6 @@ a{
   color:#fff;
   transform:translateY(-2px);
 }
-.footer-mail{
-  font-size:.9rem;
-  margin:0;
-}
-.footer-mail a{
-  text-decoration:none;
-  color:var(--texto);
-}
-.footer-mail a:hover{
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
 .footer-bottom{
   border-top:1px solid var(--linea);
   padding-top:var(--s3);
