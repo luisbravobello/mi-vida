@@ -586,6 +586,17 @@ a{
   stroke-dasharray:6 6;
   animation:marcha 1.2s linear infinite;
 }
+/* Países con sus bordes reales (datos geográficos simplificados) */
+.pais-forma{
+  fill:var(--sec);
+  stroke:var(--texto);
+  stroke-width:2;
+  stroke-linejoin:round;
+  transition:fill .25s ease;
+}
+.ruta-mapa:hover .pais-forma{
+  fill:#e7e2d8;
+}
 .pin{
   stroke-width:2;
 }
