@@ -116,28 +116,6 @@ if (cuenta) {
   }
 }
 
-// Compartir: menú nativo del sistema, o copia el enlace si no hay
-const compartir = document.getElementById('compartir');
-if (compartir) {
-  compartir.addEventListener('click', async () => {
-    const datos = { title: document.title, text: 'La vida de Luis Bravo', url: window.location.href };
-    if (navigator.share) {
-      try {
-        await navigator.share(datos);
-      } catch (err) {
-        // Se canceló, no pasa nada
-      }
-    } else if (navigator.clipboard && copyMsg) {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        copyMsg.textContent = '¡Enlace copiado!';
-      } catch (err) {
-        copyMsg.textContent = 'Copia el enlace desde la barra del navegador.';
-      }
-    }
-  });
-}
-
 // Frase rotativa: solo frases textuales ya escritas en la página
 const frase = document.querySelector('.frase');
 if (frase && !reduceMovimiento) {
