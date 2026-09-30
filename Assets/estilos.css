@@ -2,10 +2,11 @@
 :root{
   /* Color 60-30-10 blanco/negro */
   --fondo:#ffffff;       
-  --sec:#f2f2f0;          
+  --sec:#f6f2eb;          /* papel cálido */
   --texto:#14110e;        
   --muted:#5b5750;        
   --acento:#1f1f1f;       
+  --calido:#c0492b;       /* terracota: kickers, fechas, ranks */
   --linea:#e3e1dc;
   --radio:12px;
   --sombra-1:0 4px 12px rgba(20,17,14,.08);
@@ -422,7 +423,7 @@ a{
   font-size:.8rem;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--muted);
+  color:var(--calido);
   margin-bottom:var(--s2);
 }
 .section-sub{
@@ -557,7 +558,7 @@ a{
   font-size:.8rem;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--muted);
+  color:var(--calido);
   margin:0;
 }
 .t-item h3{
@@ -724,7 +725,7 @@ a{
 .fav-list li{
   counter-increment:fav;
   display:flex;
-  align-items:baseline;
+  align-items:center;
   gap:var(--s2);
   border-top:1px solid var(--linea);
   padding-top:var(--s2);
@@ -734,9 +735,35 @@ a{
   font-family:"Cormorant Garamond",Georgia,serif;
   font-weight:700;
   font-size:var(--text-lg);
-  color:var(--acento);
+  color:var(--calido);
   flex-shrink:0;
 }
+/* Miniaturas: foto real o monograma de color cuando no hay foto libre */
+.fav-thumb{
+  width:56px;
+  height:56px;
+  object-fit:cover;
+  border-radius:10px;
+  flex-shrink:0;
+  background:var(--sec);
+}
+.fav-initial{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:1.4rem;
+}
+.tint-op{background:#c0492b}
+.tint-db{background:#c96a1f}
+.tint-bc{background:#2f9e5b}
+.tint-ktl{background:#2d6cdf}
+.tint-bv{background:#d84f8a}
 .fav-list li.empty{
   color:var(--muted);
   font-style:italic;
