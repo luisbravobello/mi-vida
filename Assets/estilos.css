@@ -567,6 +567,27 @@ a{
   color:var(--muted);
   margin:0;
 }
+/* Globo terráqueo: mi ruta Venezuela → RD (dibujado en canvas) */
+.ruta{
+  margin-top:var(--s5);
+  display:grid;
+  justify-items:center;
+  gap:var(--s3);
+}
+.globo{
+  width:min(100%, 420px);
+  aspect-ratio:1 / 1;
+  display:block;
+}
+.ruta-caption{
+  color:var(--muted);
+  font-size:.9rem;
+  margin:0;
+  text-align:center;
+}
+.ruta-caption strong{
+  color:var(--texto);
+}
 
 /* ---------- 08. GUSTOS ---------- */
 /* Retícula 4+4+4: 3 tarjetas iguales */
