@@ -346,8 +346,22 @@ a{
   list-style:none;
   padding:0;
   display:grid;
+  margin:0 0 var(--s3);
+}
+.hero-card li{
+  display:flex;
+  align-items:center;
   gap:var(--s2);
-  margin-bottom:var(--s3);
+  padding:var(--s2) 0;
+  border-top:1px solid var(--linea);
+}
+.hero-card li:first-child{
+  border-top:none;
+  padding-top:0;
+}
+.hero-card li svg{
+  color:var(--acento);
+  flex-shrink:0;
 }
 .hero-card-note{
   border-top:1px solid var(--linea);
