@@ -449,18 +449,18 @@ a{
   border-color:var(--cat);
   transform:translateY(-2px);
 }
-/* Color oficial de cada tecnología */
-.t-csharp{--cat:#68217a}
-.t-sql{--cat:#0078d4}
-.t-dotnet{--cat:#512bd4}
-.t-ef{--cat:#0e7c74}
-.t-html{--cat:#e34f26}
-.t-css{--cat:#2965f1}
-.t-js{--cat:#f7df1e}
-.t-js:hover{color:#14110e}
-.t-git{--cat:#f05032}
-.t-docker{--cat:#2496ed}
-.t-unity{--cat:#000}
+/* Color oficial de cada tecnología (más específico que .chips li para ganar) */
+.chips li.t-csharp{--cat:#68217a}
+.chips li.t-sql{--cat:#0078d4}
+.chips li.t-dotnet{--cat:#512bd4}
+.chips li.t-ef{--cat:#0e7c74}
+.chips li.t-html{--cat:#e34f26}
+.chips li.t-css{--cat:#2965f1}
+.chips li.t-js{--cat:#f7df1e}
+.chips li.t-js:hover{color:#14110e}
+.chips li.t-git{--cat:#f05032}
+.chips li.t-docker{--cat:#2496ed}
+.chips li.t-unity{--cat:#000}
 /* Entrada suave del hero al cargar (escalonada) */
 .hero .badge{
   animation:subir .6s ease both;
