@@ -434,6 +434,7 @@ a{
   flex-wrap:wrap;
 }
 .chips li{
+  --cat:var(--texto);
   border:1px solid var(--linea);
   border-radius:999px;
   padding:6px 14px;
@@ -443,11 +444,23 @@ a{
   transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
 .chips li:hover{
-  background:var(--texto);
+  background:var(--cat);
   color:#fff;
-  border-color:var(--texto);
+  border-color:var(--cat);
   transform:translateY(-2px);
 }
+/* Color oficial de cada tecnología */
+.t-csharp{--cat:#68217a}
+.t-sql{--cat:#0078d4}
+.t-dotnet{--cat:#512bd4}
+.t-ef{--cat:#0e7c74}
+.t-html{--cat:#e34f26}
+.t-css{--cat:#2965f1}
+.t-js{--cat:#f7df1e}
+.t-js:hover{color:#14110e}
+.t-git{--cat:#f05032}
+.t-docker{--cat:#2496ed}
+.t-unity{--cat:#000}
 /* Entrada suave del hero al cargar (escalonada) */
 .hero .badge{
   animation:subir .6s ease both;
