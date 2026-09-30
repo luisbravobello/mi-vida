@@ -590,9 +590,6 @@ a{
 .card p{
   color:var(--muted);
 }
-.card svg{
-  color:var(--acento);
-}
 .edit-hint{
   margin-top:var(--s4);
   font-size:.85rem;
