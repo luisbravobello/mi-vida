@@ -77,3 +77,41 @@ const anio = document.getElementById('anio');
 if (anio) {
   anio.textContent = new Date().getFullYear();
 }
+
+// Hora en vivo de Punta Cana (America/Santo_Domingo)
+const horaRD = document.getElementById('horaRD');
+function actualizarHora() {
+  if (!horaRD) {
+    return;
+  }
+  const ahora = new Date();
+  horaRD.textContent = new Intl.DateTimeFormat('es-DO', {
+    timeZone: 'America/Santo_Domingo',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).format(ahora);
+  horaRD.setAttribute('datetime', ahora.toISOString());
+}
+actualizarHora();
+setInterval(actualizarHora, 30000);
+
+// Cuenta regresiva para el 27 de octubre (nací en 2002)
+const cuenta = document.getElementById('cuentaCumple');
+if (cuenta) {
+  const ahoraRD = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Santo_Domingo' }));
+  let anioMeta = ahoraRD.getFullYear();
+  let cumple = new Date(anioMeta, 9, 27);
+  if (ahoraRD > cumple && ahoraRD.toDateString() !== cumple.toDateString()) {
+    anioMeta++;
+    cumple = new Date(anioMeta, 9, 27);
+  }
+  const dias = Math.ceil((cumple - ahoraRD) / 86400000);
+  const edad = anioMeta - 2002;
+  if (dias === 0) {
+    cuenta.innerHTML = '¡Hoy cumplo <strong>' + edad + '</strong>!';
+  } else if (dias === 1) {
+    cuenta.innerHTML = '¡Mañana cumplo <strong>' + edad + '</strong>!';
+  } else {
+    cuenta.innerHTML = 'Faltan <strong>' + dias + ' días</strong> para mis ' + edad + '.';
+  }
+}

@@ -363,6 +363,24 @@ a{
   color:var(--acento);
   flex-shrink:0;
 }
+/* Datos en vivo: hora de RD + cuenta del cumple */
+.hero-live{
+  border-top:1px solid var(--linea);
+  padding-top:var(--s3);
+  display:grid;
+  gap:var(--s1);
+}
+.hero-live p{
+  margin:0;
+  font-size:.9rem;
+  color:var(--muted);
+}
+.hero-live time,
+.hero-live strong{
+  color:var(--texto);
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+}
 .hero-card-note{
   border-top:1px solid var(--linea);
   padding-top:var(--s3);
