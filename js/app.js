@@ -115,22 +115,3 @@ if (cuenta) {
     cuenta.innerHTML = 'Faltan <strong>' + dias + ' días</strong> para mis ' + edad + '.';
   }
 }
-
-// Frase rotativa: solo frases textuales ya escritas en la página
-const frase = document.querySelector('.frase');
-if (frase && !reduceMovimiento) {
-  const frases = [
-    'No me rendiré hasta graduarme como Ingeniero de Software.',
-    'Menos es más: 1 meta clara vale más que 10 a medias.',
-    'Amo mi carrera al 100%.'
-  ];
-  let turno = 0;
-  setInterval(() => {
-    frase.classList.add('cambiando');
-    setTimeout(() => {
-      turno = (turno + 1) % frases.length;
-      frase.textContent = frases[turno];
-      frase.classList.remove('cambiando');
-    }, 400);
-  }, 6000);
-}
