@@ -672,8 +672,14 @@ a{
   margin-bottom:var(--s3);
 }
 .card:hover .t-dot{
-  background:var(--acento);
-  border-color:var(--acento);
+  background:var(--cat);
+  border-color:var(--cat);
+  color:#fff;
+}
+/* Pastilla "En curso" en verde: lo que está pasando hoy */
+.meta-status.now{
+  background:#1f7a4d;
+  border-color:#1f7a4d;
   color:#fff;
 }
 .t-date{
@@ -793,6 +799,7 @@ a{
   margin-top:var(--s4);
 }
 .card{
+  --cat:var(--acento);
   position:relative;
   overflow:hidden;
   background:#fff;
@@ -809,13 +816,22 @@ a{
   left:0;
   right:0;
   height:3px;
-  background:var(--acento);
+  background:var(--cat);
   transform:scaleX(0);
   transform-origin:left;
   transition:transform .3s ease;
 }
 .card:hover::before{
   transform:scaleX(1);
+}
+/* Color por categoría: rosa K-Dramas, azul gaming, naranja anime, verde viajar, morado leer */
+.c-rosa{--cat:#e85c9a}
+.c-azul{--cat:#2d6cdf}
+.c-naranja{--cat:#f6842c}
+.c-verde{--cat:#2f9e5b}
+.c-morado{--cat:#7a3fb5}
+.card .fav-list li::before{
+  color:var(--cat);
 }
 .card:hover{
   border-color:#c9c6bf;
@@ -901,7 +917,7 @@ a{
 .meta:hover .meta-num{
   background:#000;
 }
-/* Etiqueta de estado: negra sólida = en curso, borde = por venir */
+/* Etiqueta de estado: borde = por venir (el verde "En curso" está arriba, junto a las tarjetas) */
 .meta-status{
   display:inline-block;
   font-size:.7rem;
@@ -913,11 +929,6 @@ a{
   border-radius:999px;
   padding:4px 12px;
   margin:0 0 var(--s2);
-}
-.meta-status.now{
-  background:var(--acento);
-  border-color:var(--acento);
-  color:#fff;
 }
 
 /* FOOTER */
