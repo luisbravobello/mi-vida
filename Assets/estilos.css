@@ -567,26 +567,75 @@ a{
   color:var(--muted);
   margin:0;
 }
-/* Globo terráqueo: mi ruta Venezuela → RD (dibujado en canvas) */
-.ruta{
+/* Mapa de ruta: pines + arco con etiquetas (estilo callouts) */
+.ruta-mapa{
   margin-top:var(--s5);
-  display:grid;
-  justify-items:center;
-  gap:var(--s3);
+  background:#fff;
+  border:1px solid var(--linea);
+  border-radius:var(--radio);
+  padding:var(--s4);
 }
-.globo{
-  width:min(100%, 420px);
-  aspect-ratio:1 / 1;
+.ruta-svg{
+  width:100%;
+  height:auto;
   display:block;
 }
-.ruta-caption{
-  color:var(--muted);
-  font-size:.9rem;
-  margin:0;
-  text-align:center;
+.ruta-arco{
+  stroke:var(--acento);
+  stroke-width:1.8;
+  stroke-dasharray:6 6;
+  animation:marcha 1.2s linear infinite;
 }
-.ruta-caption strong{
-  color:var(--texto);
+.pin{
+  stroke-width:2;
+}
+.pin-origen{
+  fill:#fff;
+  stroke:var(--acento);
+}
+.pin-destino{
+  fill:var(--acento);
+  stroke:var(--acento);
+}
+.pin-halo{
+  fill:none;
+  stroke:var(--acento);
+  stroke-width:1.5;
+  opacity:.6;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:sonar 2.2s ease-out infinite;
+}
+.pin-nombre{
+  font-family:"Montserrat",sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.12em;
+  fill:var(--muted);
+}
+.ruta-lados{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s4);
+  margin-top:var(--s4);
+}
+.ruta-lados h3{
+  margin:var(--s1) 0;
+}
+@keyframes marcha{
+  to{
+    stroke-dashoffset:-12;
+  }
+}
+@keyframes sonar{
+  0%{
+    transform:scale(.6);
+    opacity:.6;
+  }
+  100%{
+    transform:scale(2.2);
+    opacity:0;
+  }
 }
 
 /* ---------- 08. GUSTOS ---------- */
@@ -940,6 +989,9 @@ a{
   .form{
     grid-template-columns:1fr;
   }
+  .ruta-lados{
+    grid-template-columns:1fr;
+  }
   .footer-grid{
     grid-template-columns:1fr;
   }
@@ -1001,7 +1053,8 @@ a{
   }
   .card,
   .meta,
-  .t-item{
+  .t-item,
+  .ruta-mapa{
     animation:aparecer .6s ease both;
     animation-timeline:view();
     animation-range:entry 0% cover 25%;

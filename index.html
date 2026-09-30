@@ -533,20 +533,77 @@
             </div>
           </div>
         </div>
-        <div class="ruta">
-          <canvas
-            id="globo"
-            class="globo"
-            width="420"
-            height="420"
+        <div class="ruta-mapa">
+          <svg
+            class="ruta-svg"
+            viewBox="0 0 600 170"
             role="img"
-            aria-label="Globo terráqueo girando que marca la ruta de Venezuela a República Dominicana"
+            aria-label="Ruta de Venezuela a República Dominicana"
           >
-            De Venezuela a República Dominicana.
-          </canvas>
-          <p class="ruta-caption">
-            <strong>Venezuela</strong> → <strong>República Dominicana</strong>
-          </p>
+            <path
+              class="ruta-arco"
+              d="M70 118 C 210 30, 390 30, 530 118"
+              fill="none"
+            />
+            <circle
+              class="pin-halo"
+              cx="530"
+              cy="118"
+              r="8"
+            />
+            <circle
+              class="pin pin-origen"
+              cx="70"
+              cy="118"
+              r="8"
+            />
+            <circle
+              class="pin pin-destino"
+              cx="530"
+              cy="118"
+              r="8"
+            />
+            <text
+              class="pin-nombre"
+              x="70"
+              y="150"
+              text-anchor="middle"
+            >
+              VENEZUELA
+            </text>
+            <text
+              class="pin-nombre"
+              x="530"
+              y="150"
+              text-anchor="middle"
+            >
+              R. DOMINICANA
+            </text>
+          </svg>
+          <div class="ruta-lados">
+            <div>
+              <p class="t-date">
+                Mi país
+              </p>
+              <h3>
+                Venezuela
+              </h3>
+              <p class="t-text">
+                Nací en Aragua en 2002 y ahí crecí hasta el 2023.
+              </p>
+            </div>
+            <div>
+              <p class="t-date">
+                Actualidad
+              </p>
+              <h3>
+                República Dominicana
+              </h3>
+              <p class="t-text">
+                Vivo en Punta Cana desde el 4 de julio de 2023.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
