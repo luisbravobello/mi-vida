@@ -939,6 +939,20 @@ a{
   color:#fff;
   transform:translateY(-2px);
 }
+/* Fila social sobre fondo negro (sección Contacto) */
+.final .social{
+  margin-top:var(--s4);
+  margin-bottom:0;
+}
+.final .social a{
+  border-color:rgba(255,255,255,.35);
+  color:#fff;
+}
+.final .social a:hover{
+  background:#fff;
+  border-color:#fff;
+  color:#000;
+}
 .footer-bottom{
   border-top:1px solid var(--linea);
   padding-top:var(--s3);
